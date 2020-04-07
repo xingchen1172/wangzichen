@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::prefix('/org')->group(function(){
+         Route::any('/index','OrgController@index');  //注册页面
+         Route::any('/add','OrgController@add');  //注册方法
+     });
+   
